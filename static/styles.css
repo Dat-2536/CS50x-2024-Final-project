@@ -1,0 +1,644 @@
+:root {
+    --pomodoro: #ba4949;
+    --break: #38858a;
+    --pomo-theme1: #ba4949;
+    --pomo-theme2: #dc3545;
+    --break-theme1: #38858a;
+    --break-theme2: #198754;
+}
+
+body {
+    background-color: var(--pomodoro);
+    font-family: "Inter", sans-serif;
+    color: white;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Navbar */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+nav .navbar-brand .white {
+    color: #537fbe;
+}
+
+.navbar-brand .logo {
+    max-width: 36px;
+    max-height: 36px;
+    margin: 0 0.5rem;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.navbar-brand .brand-name {
+    color: white;
+    font-family: "Inter, San Serif";
+}
+
+/* Username */
+#username {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.username:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+/* User drop down menu */
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown li:last-child {
+    border-bottom: none;
+}
+
+.dropdown li span {
+    margin-right: 10px;
+}
+
+.dropdown li:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown li.danger {
+    color: red;
+    font-weight: bold;
+}
+
+.custom-btn {
+    background-color: lightgray;
+    border: 1px solid darkgray;
+    color: black;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.custom-btn:hover {
+    background-color: #888888;
+    border: 1px solid darkgray;
+    color: white;
+}
+
+/* Timer section */
+.timer-section {
+    max-width: 500px;
+    max-height: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.timer-section .timer-box {
+    padding: 1rem;
+}
+
+.btn {
+    font-size: 1.1rem;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+#startBtn, #skipBtn {
+    width: 40%;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#pomodoroBtn {
+    width: 33%;
+    height: auto;
+}
+
+#timer {
+    font-size: 6rem;
+}
+
+/* TODO list */
+
+.list-group-item {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.list-group-item .badge {
+    background-color: var(--pomodoro);
+    font-size: 1rem;
+}
+
+
+/* Form for register, login, change password */
+.form-btn {
+    background-color: #fff;
+    color: var(--pomodoro);
+    font-weight: bold;
+}
+
+.form-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: #fff;
+}
+
+.log-in-container {
+    max-width: 220px;
+}
+
+.form-container {
+    padding: 20px 0 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+
+/* Delete account */
+/* Dark Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+
+/* Alert Box */
+.alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    max-width: 400px;
+    width: 90%;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+/* Alert Title */
+.alert-title {
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Alert Content */
+.alert-content {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Alert Buttons */
+.alert-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.alert-buttons button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Upload profile picture */
+/* Modal Background */
+.upload-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.upload-modal-content {
+    background-color: white;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Header */
+.upload-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    position: relative;
+    padding: 0;
+}
+
+.upload-modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.close {
+    font-size: 1.5rem;
+    color: #888;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* Modal Body */
+.upload-modal-body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #333;
+}
+
+.upload-label {
+    font-size: 1rem;
+    color: #dc3545;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* File input styling */
+.upload-input {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+    color: #495057;
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out;
+}
+
+/* Hover effect on input */
+.upload-input:hover {
+    border-color: #dc3545;
+}
+
+/* Focus effect on input */
+.upload-input:focus {
+    outline: none;
+    border-color: #dc3545;
+}
+
+/* Small text under input */
+.upload-modal-body small {
+    font-size: 0.9rem;
+    color: #6c757d;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Button styling */
+.upload-modal-footer .btn-danger {
+    background-color: #dc3545;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Button hover effect */
+.upload-modal-footer .btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Added padding to modal */
+.upload-modal-content {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+/* Modal Footer */
+.upload-modal-footer {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+button[type="submit"].btn-danger {
+    background-color: #dc3545;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+button[type="submit"].btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Close button hover */
+.close:hover {
+    color: #333;
+}
+
+.avatar {
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+/* Profile modal */
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 5px;
+}
+
+/* Edit Icon */
+.edit-icon {
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Update profile */
+/* General Form Styling */
+#editForm {
+    display: none; /* Initially hidden */
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    margin-left: auto;
+}
+
+#editForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#editForm label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+#editForm input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Buttons Container */
+.upload-modal-footer.edit-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 15px;
+}
+
+/* Buttons Styling */
+#save-btn,
+#cancel-btn {
+    width: 48%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#save-btn:hover {
+    background-color: #c9302c;
+}
+
+#cancel-btn {
+    background-color: transparent;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+
+#cancel-btn:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #editForm form {
+        gap: 10px;
+    }
+
+    #save-btn,
+    #cancel-btn {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .upload-modal-footer.edit-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+/* Add tasks section */
+/* Task Container Styling */
+.task-container {
+    margin: 40px auto;
+    max-width: 600px;
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+/* Input Field */
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* Task Item Styling */
+.task {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    color: #212529;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Task Hover Effect */
+.task:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Completed Task Styling */
+.task.completed {
+    background-color: #eee;
+    text-decoration: line-through;
+    color: #6c757d;
+    border-color: #ced4da;
+}
+
+/* Buttons Inside Task */
+.task .btn-sm {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.task .btn-sm:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Separator Line */
+.separator {
+    border: 0;
+    height: 1px;
+    background: #000;
+    margin: 20px 0;
+    opacity: 0.7;
+}
+
+.only-del-btn {
+    display: fixed;
+    min-width: 60px;
+}
+
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .task-container {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    #taskInput {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 10px 16px;
+    }
+
+    .list-group-item {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .task-container .btn-sm {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}
