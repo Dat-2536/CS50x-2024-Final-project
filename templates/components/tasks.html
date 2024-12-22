@@ -1,0 +1,24 @@
+<div class="task-container">
+    <!-- Add Task Form -->
+    <div class="input-group mb-3">
+        <input type="text" id="taskInput" class="form-control" placeholder="Add a new task...">
+        <button class="btn btn-outline-danger" id="addTaskBtn">Add Task</button>
+    </div>
+    <hr class="separator">
+    <!-- Task List -->
+    <ul class="list-group" id="taskList">
+        {% if tasks %}
+            {% for task in tasks %}
+                <li class="task text-dark list-group-item d-flex justify-content-between align-items-center {% if task.status == 'completed' %}completed{% endif %}" data-task-id="{{ task.id }}">
+                    <span style="text-align: left;">{{ task.task }}</span>
+                    <div class="{% if task.status == 'pending' %}only-del-btn{% endif %}">
+                        {% if task.status == 'pending' %}
+                            <button class="btn btn-sm" onclick="completeTask({{ task.id }})"><i id="complete-task" class="ti-check"></i></button>
+                        {% endif %}
+                        <button class="btn btn-sm" onclick="deleteTask({{ task.id }})"><i id="delete-task" class="ti-trash"></i></button>
+                    </div>
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>

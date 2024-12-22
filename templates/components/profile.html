@@ -1,0 +1,42 @@
+<div class="upload-modal" id="profileModal" style="display: none;">
+    <div class="upload-modal-content">
+        <div class="upload-modal-header">
+            <h5 class="upload-modal-title">Your Profile</h5>
+            <button type="button" class="close" id="closeProfileModal">&times;</button>
+        </div>
+        <div class="upload-modal-body">
+            <!-- Profile Details -->
+            <div id="profileDetails" class="text-dark">
+                <p>
+                    <strong>Username:</strong>
+                    <span id="profileUsername" class="info">{{ username }}</span>
+                </p>
+                <p>
+                    <strong>Email:</strong>
+                    <span id="profileEmail" class="info">{{ email }}</span>
+                </p>
+                <div class="upload-modal-footer">
+                    <button type="button" form="avatarForm" id="edit-btn" class="btn btn-danger" id="uploadBtn">Edit</button>
+                </div>
+            </div>
+
+            <!-- Edit Form (Hidden Initially) -->
+            <div id="editForm" style="display: none;">
+                <form action="/update_profile" id="profileForm">
+                    <div>
+                        <label for="newUsername">Username:</label>
+                        <input type="text" id="newUsername" name="username" value="{{ username }}" placeholder="Enter new username" required>
+                    </div>
+                    <div>
+                        <label for="newEmail">Email:</label>
+                        <input type="email" id="newEmail" name="email" value="{{ email }}" placeholder="Enter new email" required>
+                    </div>
+                    <div class="upload-modal-footer edit-buttons">
+                        <button type="submit" form="profileForm" id="save-btn" class="btn btn-danger" id="save-btn">Save changes</button>
+                        <button type="button" id="cancel-btn" class="btn btn-outline-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
