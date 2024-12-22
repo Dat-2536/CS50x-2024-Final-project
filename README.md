@@ -80,3 +80,7 @@ This is a one-person project.
 <hr>
 
 **PS:** I took *CS50x* at the summer before I went to university. This is also the first online course I took about computer science. I intended to finish it in September but encountering a quite great change of my life by changing from studying at school to studying at university environment so I hardly have time for CS50. Therefore, the progress of the last few weeks were super slow. Anyway, I finished CS50x!
+ 
+ <br>
+
+ ![CS50x 2024 certificate](/static/img/README_images/CS50x.png)
